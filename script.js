@@ -99,6 +99,7 @@ function filterTodos(filter) {
                 break;
         }
     });
+    setitem();
 }
 
 let clear = document.querySelector(".clear");
@@ -108,7 +109,7 @@ clear.addEventListener("click", () => {
         if (elem.children[0].children[1].classList.contains("complete")) {
             elem.remove();
             updateLs();
-            // setitem(); // Update items counter after clearing completed
+            setitem(); // Update items counter after clearing completed
         }
     });
 });
@@ -120,3 +121,4 @@ function setitem() {
     let diff = todoli.length - activeTodo.length;
     left.innerText = `${diff} items left`;
 }
+
